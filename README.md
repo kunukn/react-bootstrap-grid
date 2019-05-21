@@ -33,4 +33,17 @@ const Card = () => (
 ```
 
 Use the components as described in
-https://react-bootstrap.github.io/layout/grid/
+
+- https://react-bootstrap.github.io/layout/grid/
+
+# Size
+
+## React components
+
+Gzip minified 1.88 kb<br>
+Minified 5.23 kb
+
+## CSS
+
+Brotli minified of the CDN css file is ~6 kb<br>
+Original size: 47.4 kb
