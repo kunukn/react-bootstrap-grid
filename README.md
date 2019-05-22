@@ -4,7 +4,7 @@ This is simply re-packaging the grid components from
 
 https://react-bootstrap.github.io/layout/grid/
 
-Include the css for your application. E.g.
+Include the CSS for your application. E.g.
 
 ```html
 <link
@@ -12,6 +12,10 @@ Include the css for your application. E.g.
   href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css"
 />
 ```
+
+
+Usage example
+
 
 ```jsx
 import { Col, Row, Container } from '@kunukn/react-bootstrap-grid';
@@ -60,7 +64,7 @@ Original size: 47.4 kb
 
 To run development
 
-`npm start` or `yarn start`
+`yarn start` or `npm start`
 
 ```bash
 npm i -g yarn
