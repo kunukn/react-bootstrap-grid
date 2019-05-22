@@ -55,3 +55,32 @@ Minified 5.23 kb
 
 Brotli minified of the CDN css file is ~6 kb<br>
 Original size: 47.4 kb
+
+# Development and testing
+
+To run development
+
+`npm start` or `yarn start`
+
+```bash
+npm i -g yarn
+git clone [repo]
+cd [repo]
+yarn
+yarn start
+open http://localhost:6007
+```
+
+or with **npm**
+
+```bash
+git clone [repo]
+cd [repo]
+npm i
+npm start
+open http://localhost:6007
+```
+
+- To develop and play around: `yarn start`
+- To build the bundle: `yarn build`
+- To validate the bundle: `yarn validate`
