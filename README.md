@@ -23,14 +23,9 @@ import { Col, Row, Container } from '@kunukn/react-bootstrap-grid';
 const Card = () => (
   <Container>
     <Row>
-      <Col>1 of 3</Col>
-      <Col xs={6}>2 of 3 (wider)</Col>
-      <Col>3 of 3</Col>
-    </Row>
-    <Row>
-      <Col>1 of 3</Col>
-      <Col xs={5}>2 of 3 (wider)</Col>
-      <Col>3 of 3</Col>
+      <Col sm>One of three columns</Col>
+      <Col sm>One of three columns</Col>
+      <Col sm>One of three columns</Col>
     </Row>
   </Container>
 );
@@ -39,6 +34,11 @@ const Card = () => (
 Use the components as described in
 
 - https://react-bootstrap.github.io/layout/grid/
+
+# Demo
+
+https://codesandbox.io/s/reactbootstrapgrid-example-9m5p0
+
 
 # CDN
 
