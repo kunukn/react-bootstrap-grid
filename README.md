@@ -36,6 +36,14 @@ Use the components as described in
 
 - https://react-bootstrap.github.io/layout/grid/
 
+# CDN
+
+## script link
+
+```html
+<script src="https://unpkg.com/@kunukn/react-bootstrap-grid/dist/Grid.umd.js"></script>
+```
+
 # Size
 
 ## React components
