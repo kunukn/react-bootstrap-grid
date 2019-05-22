@@ -1,6 +1,6 @@
 {
   "name": "@kunukn/react-bootstrap-grid",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "dist/Grid.umd.js",
   "main-es2015": "dist/Grid.umd.es2015.js",

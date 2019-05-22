@@ -2,8 +2,6 @@ import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import 'components/Base/base.scss';
 
-// import * as Grid from '~/dist/Grid.umd.js';
-// let { Col, Row, Container } = Grid.default || Grid;
 import { Col, Row, Container } from '~/dist/Grid.umd.js';
 
 ReactDOM.render(
