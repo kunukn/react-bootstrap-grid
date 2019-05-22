@@ -5,10 +5,6 @@ import 'components/Base/base.scss';
 import * as Grid from 'components/Grid';
 let { Col, Row, Container } = Grid.default || Grid;
 
-console.log(Col);
-console.log(Row);
-console.log(Container);
-
 ReactDOM.render(
   <StrictMode>
     <Container>

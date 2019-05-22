@@ -14,7 +14,7 @@ import pkg from './package.json';
 import sizes from './rollup-plugins/sizes-plugin';
 
 const input = 'components/Grid';
-const name = 'Grid';
+const name = 'ReactGrid';
 
 let includePathOptions = {
   include: {},

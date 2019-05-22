@@ -21,9 +21,9 @@ module.exports = (env = {}, argv = {}) => {
   const VALIDATE = 'validate';
 
   const entries = {
-    [PRODUCTION]: './src/components/Collapse/Collapse.hooks.jsx',
+    [PRODUCTION]: './src/components/Grid/index.js',
     [DEVELOPMENT]: './src/development-entry',
-    [VALIDATE]: './src/validate-entry',
+    [VALIDATE]: './src/validate-entry'
   };
 
   let type;
@@ -50,35 +50,35 @@ module.exports = (env = {}, argv = {}) => {
             uglifyOptions: {
               mangle: true,
               compress: {
-                drop_console: true,
+                drop_console: true
               },
               output: {
-                comments: false,
-              },
+                comments: false
+              }
             },
             cache: true,
             parallel: true,
             sourceMap: true,
-            extractComments: true,
+            extractComments: true
           }),
         isProd &&
           new OptimizeCSSAssetsPlugin({
             cssProcessorOptions: {
-              sourcemap: true,
-            },
-          }),
-      ].filter(Boolean),
+              sourcemap: true
+            }
+          })
+      ].filter(Boolean)
     },
     entry: {
-      Collapse: entry,
+      ReactGrid: entry
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
       chunkFilename: '[name].js',
       filename: '[name].js',
-      library: 'Collapse',
+      library: 'ReactGrid',
       libraryTarget: 'umd',
-      publicPath: '/',
+      publicPath: '/'
     },
     devServer: {
       //https: true,
@@ -89,11 +89,11 @@ module.exports = (env = {}, argv = {}) => {
       hot: true,
       disableHostCheck: true,
       watchContentBase: true,
-      historyApiFallback: true,
+      historyApiFallback: true
     },
     performance: {
       maxEntrypointSize: 8000,
-      hints: 'warning',
+      hints: 'warning'
     },
     module: {
       rules: [
@@ -104,18 +104,18 @@ module.exports = (env = {}, argv = {}) => {
             {
               loader: 'html-loader',
               options: {
-                minimize: isProd,
-              },
-            },
-          ],
+                minimize: isProd
+              }
+            }
+          ]
         },
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           include: path.join(__dirname, 'src'),
           use: {
-            loader: 'babel-loader',
-          },
+            loader: 'babel-loader'
+          }
         },
         {
           test: /\.css$/,
@@ -126,23 +126,23 @@ module.exports = (env = {}, argv = {}) => {
               loader: isProd ? MiniCssExtractPlugin.loader : 'style-loader',
               options: isProd
                 ? {
-                    publicPath: './',
+                    publicPath: './'
                   }
-                : {},
+                : {}
             },
             {
               loader: 'css-loader',
               options: {
-                sourceMap: true,
-              },
+                sourceMap: true
+              }
             },
             {
               loader: 'postcss-loader',
               options: {
-                sourceMap: true,
-              },
-            },
-          ],
+                sourceMap: true
+              }
+            }
+          ]
         },
         {
           test: /\.scss$/,
@@ -153,31 +153,31 @@ module.exports = (env = {}, argv = {}) => {
               loader: isProd ? MiniCssExtractPlugin.loader : 'style-loader',
               options: isProd
                 ? {
-                    publicPath: './',
+                    publicPath: './'
                   }
-                : {},
+                : {}
             },
             {
               loader: 'css-loader',
               options: {
-                sourceMap: true,
-              },
+                sourceMap: true
+              }
             },
             {
               loader: 'postcss-loader',
               options: {
-                sourceMap: true,
-              },
+                sourceMap: true
+              }
             },
             {
               loader: 'sass-loader',
               options: {
-                sourceMap: true,
-              },
-            },
-          ],
-        },
-      ].filter(Boolean),
+                sourceMap: true
+              }
+            }
+          ]
+        }
+      ].filter(Boolean)
     },
     plugins: [
       isProd && new CleanWebpackPlugin('dist', {}),
@@ -187,11 +187,11 @@ module.exports = (env = {}, argv = {}) => {
         inject: true,
         hash: true,
         template: 'src/index.html',
-        filename: 'index.html',
+        filename: 'index.html'
       }),
       // This is necessary to emit hot updates (currently CSS only):
       !isProd && new webpack.HotModuleReplacementPlugin(),
-      new WebpackMd5Hash(),
+      new WebpackMd5Hash()
     ].filter(Boolean),
     resolve: {
       //modules: [path.resolve(__dirname), 'node_modules'],
@@ -199,10 +199,10 @@ module.exports = (env = {}, argv = {}) => {
       alias: {
         '~': __dirname,
         src: path.resolve(__dirname, 'src'),
-        components: path.resolve(__dirname, 'src/components'),
-      },
+        components: path.resolve(__dirname, 'src/components')
+      }
     },
-    externals: {},
+    externals: {}
   };
 
   if (isProd) {
@@ -211,14 +211,14 @@ module.exports = (env = {}, argv = {}) => {
       commonjs2: 'react',
       commonjs: 'react',
       amd: 'react',
-      umd: 'react',
+      umd: 'react'
     };
     config.externals['react-dom'] = {
       root: 'ReactDOM',
       commonjs2: 'react-dom',
       commonjs: 'react-dom',
       amd: 'react-dom',
-      umd: 'react-dom',
+      umd: 'react-dom'
     };
   }
 
